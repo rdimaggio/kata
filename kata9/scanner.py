@@ -36,6 +36,10 @@ class Checkout():
         else:
             self.scanned_items[lower_item] = 1
 
+    def scan_list(self, item_list):
+        for item in item_list:
+            self.scan(item.lower())
+
     #@profile
     def unscan(self, item):
         lower_item = item.lower()

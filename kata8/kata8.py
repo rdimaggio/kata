@@ -9,7 +9,7 @@ class WordCounter():
         self.sub_words = []
         self.word_counter = 0
 
-    @profile
+    #@profile
     def load_dictionary(self, dictionary_file):
         # load the dictionary file
         f = open(dictionary_file, 'r')
@@ -31,7 +31,7 @@ class WordCounter():
         self.dictionary = frozenset(self.sub_words)
         self.words_set = frozenset(self.words)
 
-    @profile
+    #@profile
     def create_subword_list(self, max_string_length, min_string_length):
         self.combos = []
         # loop through max character word list

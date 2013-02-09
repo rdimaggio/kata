@@ -9,8 +9,7 @@ class TestSequenceFunctions(unittest.TestCase):
 
     def price(self, goods):
         co = scanner.Checkout(self.rules_file)
-        for each in goods:
-            co.scan(each)
+        co.scan_list(goods)
         return co.total()
 
     def test_totals(self):
