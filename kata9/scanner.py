@@ -36,6 +36,7 @@ class Checkout():
         else:
             self.scanned_items[lower_item] = 1
 
+    #@profile
     def scan_list(self, item_list):
         for item in item_list:
             self.scan(item.lower())
@@ -80,8 +81,9 @@ class Checkout():
                     quantity = 0
                 # calculate discount and reduce quantity still to calculate
                 else:
-                    total += disc_qty * price
-                    quantity -= disc_qty
+                    multiple = quantity / disc_qty
+                    total += multiple * disc_qty * price
+                    quantity -= multiple * disc_qty
 
         # round floating point result
         return int("%.0f" % total)
